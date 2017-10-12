@@ -1,0 +1,20 @@
+<div class="container">
+	<h1>This is page 1.</h1>
+	
+	<ul class="list">
+		{{each list item index}}
+		<li>索引{{index}}：{{item}}</li>
+		{{/each}}
+	</ul>
+
+	<div class="ctrl">
+		<a href="/page-2.html" class="btn">
+			<span class="txt">go page 2</span><i class="ico_arrow"></i>
+		</a>
+	</div>
+</div>
+<div>
+	<span>
+		<a href="./login.html">login</a>
+	</span>
+</div>

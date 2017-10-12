@@ -1,0 +1,5 @@
+<div>
+    login
+    <div id="img"></div>
+    <img src="../static/img/page-2/img.jpg" alt="">
+</div>

@@ -1,0 +1,6 @@
+#img{
+    width: 900px;
+    height:900px;
+    background-color: red;
+    background: url(../../img/common/img.jpg) no-repeat;
+}

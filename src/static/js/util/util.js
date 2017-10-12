@@ -20,5 +20,8 @@ export default {
 		    }, 9);
 		};
 		document.body.appendChild(iframe);
+	},
+	cookie(){
+		
 	}
 }

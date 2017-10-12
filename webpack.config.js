@@ -21,10 +21,10 @@ var output = env === 'production' ? {
 var extractCss = env === 'production' ? new ExtractTextPlugin('css/[name].[chunkhash:5].css') : new ExtractTextPlugin('css/[name].css');
 var commonsJs = env === 'production' ? new webpack.optimize.CommonsChunkPlugin({
 	name: 'vendor', 
-	filename: 'js/vendor.[chunkhash:5].js'
+	filename: 'js/[name].[chunkhash:5].js'
 }) : new webpack.optimize.CommonsChunkPlugin({
 	name: 'vendor', 
-	filename: 'js/vendor.js'
+	filename: 'js/[name].js'
 });
 
 var hotModule = new webpack.HotModuleReplacementPlugin();
@@ -34,7 +34,7 @@ var uglifyJs = new webpack.optimize.UglifyJsPlugin({
 	compress: {
 		warnings: false,
 		// 删除console
-		drop_console: true
+		drop_console: false
 	}
 });
 
@@ -119,7 +119,7 @@ config = {
 				
 			},
 			{
-				test: /\.(eot|woff|ttf)$/,
+				test: /\.(eot|woff|ttf|svg)$/,
 				use: ['url-loader?limit=8192&name=font/[name].[hash:16].[ext]']
 			},
 			{ 
@@ -150,7 +150,8 @@ config = {
 		alias: {
 			views: path.resolve(__dirname, './src/views'),
 			static: path.resolve(__dirname, './src/static'),
-			components: path.resolve(__dirname, './src/components')
+			components: path.resolve(__dirname, './src/components'),
+			cookie:path.resolve(__dirname, './src/static/js/lib/jquery.cookie.js')
 		}
 	},
 	plugins: [
